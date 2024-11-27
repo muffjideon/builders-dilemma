@@ -1,310 +1,335 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Platform Builder's Dilemma</title>
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eef2f7;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0 2rem;
+            background: white;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            color: #2c3e50;
+        }
+
+        td, th {
+            padding: 1rem;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        th:first-child,
+        td:first-child {
+            padding-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Status Colors */
+        .red { color: #e74c3c; }
+        .green { color: #2ecc71; }
+        .yellow { color: #f1c40f; }
+
+        /* Hover Effects */
+        tbody tr:hover {
+            background: #f8fafc;
+            transition: background 0.2s ease;
+        }
+
+        /* Legend */
+        .legend {
+            margin-top: 2rem;
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .legend div {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            td, th {
+                padding: 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f5f5f5;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2c3e50;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #34495e;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #eee;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>table {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>th, td {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eee;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>th {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>tr:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.red {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #e74c3c;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.green {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2ecc71;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.yellow {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #f1c40f;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.legend {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.legend div {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 5px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>th, td {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;The Platform Builder's Dilemma: External UI vs. Headless Integration&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Business Impact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Aspect&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;External UI Integration&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Headless Own UI&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Revenue Model&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Revenue share (smaller piece of bigger pie)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Full revenue capture (bigger piece of smaller pie)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Customer Lifetime Value&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Lower (split loyalty)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Higher (single platform loyalty)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Market Position&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Fast market entry, borrowed credibility&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="yellow"&gt;🟡 Slower growth, owned credibility&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Platform Control&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Limited, dependent on partner's roadmap&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Complete control of destiny&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Innovation Speed&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Waiting for partners&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Move at your own pace&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Technical Reality&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Aspect&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;External UI Integration&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Headless Own UI&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Development Complexity&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Lower initial, higher maintenance&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="yellow"&gt;🟡 Higher initial, controlled maintenance&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Technical Debt&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Hidden (partner's decisions)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Visible (your decisions)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Integration Effort&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="yellow"&gt;🟡 Quick wins, long-term complexity&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="yellow"&gt;🟡 Slow wins, long-term simplicity&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Scalability&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Limited by partner's architecture&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Limited only by your architecture&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Security Control&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Split responsibility&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Full responsibility&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Customer Experience&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Aspect&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;External UI Integration&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Headless Own UI&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;User Journey&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Fragmented (platform hopping)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Seamless (single platform)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Brand Experience&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Diluted&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Pure&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Support Experience&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Multiple touchpoints, finger-pointing&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Single source of truth&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Feature Updates&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Dependent on partner&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 On-demand&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Data Flow&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Indirect, potential latency&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Direct, real-time&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Hidden Costs&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Aspect&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;External UI Integration&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Headless Own UI&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Operational Overhead&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Multiple vendor management&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Single team management&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Training Costs&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Multiple systems&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Single system&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Integration Maintenance&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Continuous adaptation&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Controlled evolution&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Compliance Management&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Multiple compliance scopes&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Single compliance scope&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Strategic Implications&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Aspect&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;External UI Integration&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th&gt;Headless Own UI&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Market Perception&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="yellow"&gt;🟡 Fast follower&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Innovation leader&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Competitive Edge&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Parity offering&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Differentiation potential&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Future Readiness&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Partner dependent&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Self-determined&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Data Ownership&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Low insight&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 High insight&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;Platform Valuation&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="red"&gt;🔴 Lower multiples&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="green"&gt;🟢 Higher multiples&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Legend:&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="green"&gt;🟢 Favorable&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="yellow"&gt;🟡 Neutral/Even&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="red"&gt;🔴 Less Favorable&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="container">
+        <h1>The Platform Builder's Dilemma: External UI vs. Headless Integration</h1>
+
+        <h2>Business Impact</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>External UI Integration</th>
+                    <th>Headless Own UI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Revenue Model</td>
+                    <td class="red">🔴 Revenue share (smaller piece of bigger pie)</td>
+                    <td class="green">🟢 Full revenue capture (bigger piece of smaller pie)</td>
+                </tr>
+                <tr>
+                    <td>Customer Lifetime Value</td>
+                    <td class="red">🔴 Lower (split loyalty)</td>
+                    <td class="green">🟢 Higher (single platform loyalty)</td>
+                </tr>
+                <tr>
+                    <td>Market Position</td>
+                    <td class="green">🟢 Fast market entry, borrowed credibility</td>
+                    <td class="yellow">🟡 Slower growth, owned credibility</td>
+                </tr>
+                <tr>
+                    <td>Platform Control</td>
+                    <td class="red">🔴 Limited, dependent on partner's roadmap</td>
+                    <td class="green">🟢 Complete control of destiny</td>
+                </tr>
+                <tr>
+                    <td>Innovation Speed</td>
+                    <td class="red">🔴 Waiting for partners</td>
+                    <td class="green">🟢 Move at your own pace</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Technical Reality</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>External UI Integration</th>
+                    <th>Headless Own UI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Development Complexity</td>
+                    <td class="green">🟢 Lower initial, higher maintenance</td>
+                    <td class="yellow">🟡 Higher initial, controlled maintenance</td>
+                </tr>
+                <tr>
+                    <td>Technical Debt</td>
+                    <td class="red">🔴 Hidden (partner's decisions)</td>
+                    <td class="green">🟢 Visible (your decisions)</td>
+                </tr>
+                <tr>
+                    <td>Integration Effort</td>
+                    <td class="yellow">🟡 Quick wins, long-term complexity</td>
+                    <td class="yellow">🟡 Slow wins, long-term simplicity</td>
+                </tr>
+                <tr>
+                    <td>Scalability</td>
+                    <td class="red">🔴 Limited by partner's architecture</td>
+                    <td class="green">🟢 Limited only by your architecture</td>
+                </tr>
+                <tr>
+                    <td>Security Control</td>
+                    <td class="red">🔴 Split responsibility</td>
+                    <td class="green">🟢 Full responsibility</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Customer Experience</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>External UI Integration</th>
+                    <th>Headless Own UI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User Journey</td>
+                    <td class="red">🔴 Fragmented (platform hopping)</td>
+                    <td class="green">🟢 Seamless (single platform)</td>
+                </tr>
+                <tr>
+                    <td>Brand Experience</td>
+                    <td class="red">🔴 Diluted</td>
+                    <td class="green">🟢 Pure</td>
+                </tr>
+                <tr>
+                    <td>Support Experience</td>
+                    <td class="red">🔴 Multiple touchpoints, finger-pointing</td>
+                    <td class="green">🟢 Single source of truth</td>
+                </tr>
+                <tr>
+                    <td>Feature Updates</td>
+                    <td class="red">🔴 Dependent on partner</td>
+                    <td class="green">🟢 On-demand</td>
+                </tr>
+                <tr>
+                    <td>Data Flow</td>
+                    <td class="red">🔴 Indirect, potential latency</td>
+                    <td class="green">🟢 Direct, real-time</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Hidden Costs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>External UI Integration</th>
+                    <th>Headless Own UI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Operational Overhead</td>
+                    <td class="red">🔴 Multiple vendor management</td>
+                    <td class="green">🟢 Single team management</td>
+                </tr>
+                <tr>
+                    <td>Training Costs</td>
+                    <td class="red">🔴 Multiple systems</td>
+                    <td class="green">🟢 Single system</td>
+                </tr>
+                <tr>
+                    <td>Integration Maintenance</td>
+                    <td class="red">🔴 Continuous adaptation</td>
+                    <td class="green">🟢 Controlled evolution</td>
+                </tr>
+                <tr>
+                    <td>Compliance Management</td>
+                    <td class="red">🔴 Multiple compliance scopes</td>
+                    <td class="green">🟢 Single compliance scope</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Strategic Implications</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>External UI Integration</th>
+                    <th>Headless Own UI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Market Perception</td>
+                    <td class="yellow">🟡 Fast follower</td>
+                    <td class="green">🟢 Innovation leader</td>
+                </tr>
+                <tr>
+                    <td>Competitive Edge</td>
+                    <td class="red">🔴 Parity offering</td>
+                    <td class="green">🟢 Differentiation potential</td>
+                </tr>
+                <tr>
+                    <td>Future Readiness</td>
+                    <td class="red">🔴 Partner dependent</td>
+                    <td class="green">🟢 Self-determined</td>
+                </tr>
+                <tr>
+                    <td>Data Ownership</td>
+                    <td class="red">🔴 Low insight</td>
+                    <td class="green">🟢 High insight</td>
+                </tr>
+                <tr>
+                    <td>Platform Valuation</td>
+                    <td class="red">🔴 Lower multiples</td>
+                    <td class="green">🟢 Higher multiples</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="legend">
+            <div>Legend:</div>
+            <div class="green">🟢 Favorable</div>
+            <div class="yellow">🟡 Neutral/Even</div>
+            <div class="red">🔴 Less Favorable</div>
+        </div>
+    </div>
 </body>
 </html>
